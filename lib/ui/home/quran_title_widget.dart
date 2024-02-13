@@ -10,14 +10,11 @@ class QuranTitleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return InkWell(
-      onTap: () {
-
-      },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(title),
-          Text(versesNumber),
+          Text(title,style: TextStyle(fontSize: 24),),
+          Text(versesNumber,style: TextStyle(fontSize: 24)),
         ],
       ),
     );
