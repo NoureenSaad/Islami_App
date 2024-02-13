@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
 
         appBar: AppBar(
-          title: Text("Islami"),
+          title: Text("إسلامي"),
         ),
 
         bottomNavigationBar: BottomNavigationBar(
@@ -47,22 +47,22 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
               backgroundColor: Theme.of(context).colorScheme.primary,
               icon: ImageIcon(AssetImage("assets/images/icon_quran.png")),
-              label: 'Quran',
+              label: 'قرآن',
             ),
             BottomNavigationBarItem(
               backgroundColor: Theme.of(context).colorScheme.primary,
               icon: ImageIcon(AssetImage("assets/images/icon_radio.png")),
-              label: 'Radio',
+              label: 'راديو',
             ),
             BottomNavigationBarItem(
               backgroundColor: Theme.of(context).colorScheme.primary,
               icon: ImageIcon(AssetImage("assets/images/icon_sebha.png")),
-              label: 'Sebha',
+              label: 'سبحة',
             ),
             BottomNavigationBarItem(
               backgroundColor: Theme.of(context).colorScheme.primary,
               icon: ImageIcon(AssetImage("assets/images/icon_hadeth.png")),
-              label: 'Hadeth',
+              label: 'أحاديث',
             ),
           ],
         ),
