@@ -3,6 +3,7 @@ import 'package:eslami/ui/home/quran_widget.dart';
 import 'package:eslami/ui/home/radio_widget.dart';
 import 'package:eslami/ui/home/sebha_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String route = "HomeScreen";
@@ -31,9 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
         )
       ),
       child: Scaffold(
-
         appBar: AppBar(
-          title: Text("إسلامي"),
+          title: Text("إسلامي",style: TextStyle(fontSize: 35),),
         ),
 
         bottomNavigationBar: BottomNavigationBar(

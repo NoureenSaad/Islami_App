@@ -1,4 +1,5 @@
 import 'package:eslami/ui/home/home_screen.dart';
+import 'package:eslami/ui/quran_details/quran_details_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         HomeScreen.route:(BuildContext context)=>HomeScreen(),
+        QuranDetailsScreen.route:(_)=>QuranDetailsScreen(),
       },
       initialRoute: HomeScreen.route,
     );

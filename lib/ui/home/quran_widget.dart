@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class QuranWidget extends StatelessWidget {
   List<String> suraNames = [
-    "الفاتحه","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود"
+    "الفاتحة","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود"
     ,"يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه","الأنبياء","الحج","المؤمنون"
     ,"النّور","الفرقان","الشعراء","النّمل","القصص","العنكبوت","الرّوم","لقمان","السجدة","الأحزاب","سبأ"
     ,"فاطر","يس","الصافات","ص","الزمر","غافر","فصّلت","الشورى","الزخرف","الدّخان","الجاثية","الأحقاف"
@@ -42,7 +42,7 @@ class QuranWidget extends StatelessWidget {
           child: ListView.separated(
             padding: EdgeInsets.all(10),
               itemBuilder: (context,index){
-                return QuranTitleWidget(title: suraNames[index], versesNumber: versesNumber[index].toString());
+                return QuranTitleWidget(title: suraNames[index], versesNumber: versesNumber[index].toString(),index: index,);
               },
               separatorBuilder: (context,index){
                 return Container(
