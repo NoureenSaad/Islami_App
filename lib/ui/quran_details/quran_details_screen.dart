@@ -27,7 +27,7 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(args.title,style: TextStyle(fontSize: 35),),
+          title: Text(args.title),
         ),
         body: Card(
           margin: EdgeInsets.all(30),

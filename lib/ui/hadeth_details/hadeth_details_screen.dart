@@ -20,7 +20,7 @@ class HadethDetailsScreen extends StatelessWidget {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(hadethModel.hadethTitle,style: TextStyle(fontSize: 35),),
+          title: Text(hadethModel.hadethTitle),
         ),
         body: Card(
           margin: EdgeInsets.all(30),
