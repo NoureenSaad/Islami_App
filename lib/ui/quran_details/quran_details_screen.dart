@@ -3,6 +3,8 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../style/app_theme.dart';
+
 class QuranDetailsScreen extends StatefulWidget {
   static const String route = "quran_details";
 
@@ -21,7 +23,7 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
       decoration:
       BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/default_bg.png"),
+            image: AssetImage(AppTheme.isDark?"assets/images/dark_bg.png":"assets/images/default_bg.png"),
             fit: BoxFit.fill,
           )
       ),
@@ -30,8 +32,6 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
           title: Text(args.title),
         ),
         body: Card(
-          margin: EdgeInsets.all(30),
-          elevation: 10,
           child: lines.isEmpty?
             Center(child: CircularProgressIndicator(),)
             : Container(
@@ -40,13 +40,11 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
                 itemBuilder: (context,index)=>Text(
                   "${lines[index]}(${index+1})",
                   textDirection: TextDirection.rtl,
-                  style: TextStyle(color: Colors.black,fontSize: 20),),
-
+                  style: Theme.of(context).textTheme.bodyMedium),
                   separatorBuilder: (context,index)=>Container(
                     height: 2,
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).dividerColor,
                   ),
-
                   itemCount: lines.length),
             ),
         ),

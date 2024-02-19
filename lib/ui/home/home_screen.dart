@@ -1,7 +1,9 @@
+import 'package:eslami/style/app_theme.dart';
 import 'package:eslami/ui/home/hadeth_widget.dart';
 import 'package:eslami/ui/home/quran_widget.dart';
 import 'package:eslami/ui/home/radio_widget.dart';
 import 'package:eslami/ui/home/sebha_widget.dart';
+import 'package:eslami/ui/home/settings_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -19,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     RadioWidget(),
     SebhaWidget(),
     HadethWidget(),
+    SettingsWidget(),
   ];
 
   @override
@@ -27,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
       decoration:
       BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("assets/images/default_bg.png"),
+            image: AssetImage(AppTheme.isDark?"assets/images/dark_bg.png":"assets/images/default_bg.png"),
             fit: BoxFit.fill,
         )
       ),
@@ -63,6 +66,13 @@ class _HomeScreenState extends State<HomeScreen> {
               backgroundColor: Theme.of(context).colorScheme.primary,
               icon: ImageIcon(AssetImage("assets/images/icon_hadeth.png")),
               label: 'أحاديث',
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: Theme.of(context).colorScheme.primary,
+              icon: Icon(
+                Icons.settings,
+              ),
+              label: 'إعدادات',
             ),
           ],
         ),

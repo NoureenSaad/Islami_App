@@ -2,6 +2,8 @@ import 'package:eslami/ui/home/hadeth_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../style/app_theme.dart';
+
 class HadethDetailsScreen extends StatelessWidget {
   static const String route = "hadeth_details";
   const HadethDetailsScreen({super.key});
@@ -14,7 +16,7 @@ class HadethDetailsScreen extends StatelessWidget {
       decoration:
       BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/default_bg.png"),
+            image: AssetImage(AppTheme.isDark?"assets/images/dark_bg.png":"assets/images/default_bg.png"),
             fit: BoxFit.fill,
           )
       ),
@@ -23,13 +25,11 @@ class HadethDetailsScreen extends StatelessWidget {
           title: Text(hadethModel.hadethTitle),
         ),
         body: Card(
-          margin: EdgeInsets.all(30),
-          elevation: 10,
           child: SingleChildScrollView(
             child: Text(
               textDirection: TextDirection.rtl,
               "${hadethModel.hadethContent}",
-              style: TextStyle(fontSize: 20),
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
           ),

@@ -29,13 +29,13 @@ class QuranWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text("اسم السورة",style: TextStyle(color: Theme.of(context).colorScheme.primary,fontSize: 30,fontWeight: FontWeight.bold),),
-            Text("عدد الآيات",style: TextStyle(color: Theme.of(context).colorScheme.primary,fontSize: 30,fontWeight: FontWeight.bold)),
+            Text("اسم السورة",style: Theme.of(context).textTheme.titleLarge),
+            Text("عدد الآيات",style: Theme.of(context).textTheme.titleLarge),
           ],
         ),
         Divider(
           height: 2,
-          color: Theme.of(context).colorScheme.primary,
+          color: Theme.of(context).dividerColor,
         ),
         Expanded(
           flex: 3,
@@ -49,7 +49,7 @@ class QuranWidget extends StatelessWidget {
                   width: double.infinity,
                   margin: EdgeInsets.all(5),
                   height: 2,
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).dividerColor,
                 );
               },
             itemCount: suraNames.length,

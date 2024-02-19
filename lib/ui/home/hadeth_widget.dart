@@ -23,12 +23,12 @@ class _HadethWidgetState extends State<HadethWidget> {
         ),
         Container(
           decoration: BoxDecoration(
-            border: Border.symmetric(horizontal: BorderSide(color: Theme.of(context).colorScheme.primary,width: 2))
+            border: Border.symmetric(horizontal: BorderSide(color: Theme.of(context).dividerColor,width: 2))
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("الأحاديث",style: TextStyle(color: Theme.of(context).colorScheme.primary,fontSize: 30,fontWeight: FontWeight.bold),),
+              Text("الأحاديث",style:Theme.of(context).textTheme.titleLarge),
             ],
           ),
         ),
@@ -42,7 +42,7 @@ class _HadethWidgetState extends State<HadethWidget> {
                   width: double.infinity,
                   margin: EdgeInsets.all(5),
                   height: 2,
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).dividerColor,
                 );
               },
               itemCount: allAhadeth.length)

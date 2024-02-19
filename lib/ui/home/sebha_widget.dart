@@ -1,3 +1,4 @@
+import 'package:eslami/style/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class SebhaWidget extends StatefulWidget {
@@ -22,7 +23,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
             children: [
               Container(
                 padding: EdgeInsets.only(bottom: 290,left: 70),
-                child: Image.asset("assets/images/head_sebha_logo.png")
+                child: Image.asset(AppTheme.isDark?"assets/images/head_sebha_dark.png":"assets/images/head_sebha_logo.png")
               ),
               AnimatedRotation(
                 turns: turns,
@@ -35,7 +36,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
                         sebhaTextChange();
                       });
                     },
-                    child: Image.asset("assets/images/body_sebha_logo.png")
+                    child: Image.asset(AppTheme.isDark?"assets/images/body_sebha_dark.png":"assets/images/body_sebha_logo.png")
                 ),
               ),
             ],
@@ -44,10 +45,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
             children: [
               Container(
                 margin: EdgeInsets.only(bottom: 20),
-                child: Text("عدد التسبيحات",style: TextStyle(
-                  fontSize: 26,
-
-                ),),
+                child: Text("عدد التسبيحات",style: Theme.of(context).textTheme.labelMedium),
               ),
               Container(
                 margin: EdgeInsets.only(bottom: 20),
@@ -55,27 +53,20 @@ class _SebhaWidgetState extends State<SebhaWidget> {
                 height: 50,
                 width: 70,
                 decoration: BoxDecoration(
-                  color: Color(0x76b7935f),
+                  color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Text("${sebhaNumber}",style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold
-                ),),
+                child: Text("${sebhaNumber}",style: Theme.of(context).textTheme.labelMedium),
               ),
               Container(
                 alignment: Alignment.center,
                 height: 50,
                 width: 150,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).dividerColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Text("${sebhaList[counter]}",style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold
-                ),),
+                child: Text("${sebhaList[counter]}",style: Theme.of(context).textTheme.titleMedium),
               )
             ],
           )
