@@ -45,7 +45,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   color: Theme.of(context).colorScheme.primary,
                 )
               ),
-              child: Text("العربية",style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              child: Text(provider.language == "ar"?"العربية":"English",
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 color: Theme.of(context).primaryColor,
               )),
             ),
