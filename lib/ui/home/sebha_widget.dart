@@ -1,6 +1,9 @@
 import 'package:eslami/style/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/settings_provider.dart';
 
 class SebhaWidget extends StatefulWidget {
 
@@ -16,6 +19,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider provider = Provider.of<SettingsProvider>(context);
     return Center(
       child: Column(
         children: [
@@ -24,7 +28,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
             children: [
               Container(
                 padding: EdgeInsets.only(bottom: 290,left: 70),
-                child: Image.asset(AppTheme.isDark?"assets/images/head_sebha_dark.png":"assets/images/head_sebha_logo.png")
+                child: Image.asset(provider.theme == ThemeMode.dark?"assets/images/head_sebha_dark.png":"assets/images/head_sebha_logo.png")
               ),
               AnimatedRotation(
                 turns: turns,
@@ -37,7 +41,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
                         sebhaTextChange();
                       });
                     },
-                    child: Image.asset(AppTheme.isDark?"assets/images/body_sebha_dark.png":"assets/images/body_sebha_logo.png")
+                    child: Image.asset(provider.theme == ThemeMode.dark?"assets/images/body_sebha_dark.png":"assets/images/body_sebha_logo.png")
                 ),
               ),
             ],

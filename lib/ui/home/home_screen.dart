@@ -7,6 +7,9 @@ import 'package:eslami/ui/home/settings_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/settings_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String route = "HomeScreen";
@@ -27,11 +30,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider provider = Provider.of<SettingsProvider>(context);
     return Container(
       decoration:
       BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(AppTheme.isDark?"assets/images/dark_bg.png":"assets/images/default_bg.png"),
+            image: AssetImage(provider.theme == ThemeMode.dark?"assets/images/dark_bg.png":"assets/images/default_bg.png"),
             fit: BoxFit.fill,
         )
       ),
