@@ -1,6 +1,7 @@
 import 'package:eslami/ui/home/language_sheet.dart';
 import 'package:eslami/ui/home/theme_sheet.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsWidget extends StatefulWidget {
   const SettingsWidget({super.key});
@@ -19,8 +20,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
         children: [
           Container(
             width: double.infinity,
-            alignment: Alignment.center,
-            child: Text("اللغة",style: TextStyle(
+            child: Text(AppLocalizations.of(context)!.language,style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
             ),),
@@ -49,8 +49,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
           SizedBox(height: 15,),
           Container(
             width: double.infinity,
-            alignment: Alignment.center,
-            child: Text("المظهر",style: TextStyle(
+            child: Text(AppLocalizations.of(context)!.theme,style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
             ),),

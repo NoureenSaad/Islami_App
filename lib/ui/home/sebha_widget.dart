@@ -1,5 +1,6 @@
 import 'package:eslami/style/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SebhaWidget extends StatefulWidget {
 
@@ -45,7 +46,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
             children: [
               Container(
                 margin: EdgeInsets.only(bottom: 20),
-                child: Text("عدد التسبيحات",style: Theme.of(context).textTheme.labelMedium),
+                child: Text(AppLocalizations.of(context)!.tasbehnumber,style: Theme.of(context).textTheme.labelMedium),
               ),
               Container(
                 margin: EdgeInsets.only(bottom: 20),

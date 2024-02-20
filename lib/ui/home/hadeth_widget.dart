@@ -2,6 +2,7 @@ import 'package:eslami/ui/home/hadeth_model.dart';
 import 'package:eslami/ui/home/hadeth_title_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadethWidget extends StatefulWidget {
 
@@ -28,7 +29,7 @@ class _HadethWidgetState extends State<HadethWidget> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("الأحاديث",style:Theme.of(context).textTheme.titleLarge),
+              Text(AppLocalizations.of(context)!.hadethname,style:Theme.of(context).textTheme.titleLarge),
             ],
           ),
         ),
