@@ -28,6 +28,7 @@ class AppTheme{
         backgroundColor: Colors.transparent,
         centerTitle: true,
         titleTextStyle: TextStyle(
+          fontFamily: 'Amiri',
           fontSize: 30,
           fontWeight: FontWeight.bold,
           color: Colors.black,
@@ -39,30 +40,36 @@ class AppTheme{
     ),
     textTheme: TextTheme(
         titleLarge: TextStyle(
+          fontFamily: 'Amiri',
             fontSize: 25,
             fontWeight: FontWeight.w600,
             color: Colors.black,
         ),
         labelMedium: TextStyle(
+          fontFamily: 'Amiri',
           color: Colors.black,
           fontSize: 25,
           fontWeight: FontWeight.w700,
         ),
         bodyMedium: TextStyle(
+            fontFamily: 'Amiri',
             color: Colors.black,
             fontSize: 20,
             fontWeight: FontWeight.w400
         ),
       labelSmall: TextStyle(
+          fontFamily: 'Amiri',
         color: Colors.black,
         fontSize: 16
       ),
       labelLarge: TextStyle(
+          fontFamily: 'Amiri',
         fontWeight: FontWeight.bold,
         fontSize: 20,
         color: lightPrimary
       ),
         titleMedium: TextStyle(
+            fontFamily: 'Amiri',
             color: Colors.white,
             fontSize: 25,
             fontWeight: FontWeight.bold
@@ -100,6 +107,7 @@ class AppTheme{
         backgroundColor: Colors.transparent,
         centerTitle: true,
         titleTextStyle: TextStyle(
+          fontFamily: 'Amiri',
           fontSize: 30,
           fontWeight: FontWeight.bold,
           color: Colors.white,
@@ -111,30 +119,36 @@ class AppTheme{
     ),
     textTheme: TextTheme(
       titleLarge: TextStyle(
+        fontFamily: 'Amiri',
         fontSize: 25,
         fontWeight: FontWeight.w600,
         color: Colors.white,
       ),
       labelMedium: TextStyle(
+        fontFamily: 'Amiri',
         color: Colors.white,
         fontSize: 25,
         fontWeight: FontWeight.w700,
       ),
       bodyMedium: TextStyle(
+        fontFamily: 'Amiri',
         color: darkSecondary,
         fontSize: 20,
         fontWeight: FontWeight.w400
       ),
         labelSmall: TextStyle(
+            fontFamily: 'Amiri',
             color: Colors.white,
             fontSize: 16
         ),
         labelLarge: TextStyle(
+            fontFamily: 'Amiri',
           fontWeight: FontWeight.bold,
           fontSize: 20,
           color: darkSecondary
         ),
       titleMedium: TextStyle(
+          fontFamily: 'Amiri',
         color: Colors.black,
         fontSize: 25,
         fontWeight: FontWeight.bold

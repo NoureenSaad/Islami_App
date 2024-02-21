@@ -1,6 +1,10 @@
 import 'package:eslami/ui/home/language_sheet.dart';
 import 'package:eslami/ui/home/theme_sheet.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/settings_provider.dart';
 
 class SettingsWidget extends StatefulWidget {
   const SettingsWidget({super.key});
@@ -12,6 +16,7 @@ class SettingsWidget extends StatefulWidget {
 class _SettingsWidgetState extends State<SettingsWidget> {
   @override
   Widget build(BuildContext context) {
+    SettingsProvider provider = Provider.of<SettingsProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -19,8 +24,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
         children: [
           Container(
             width: double.infinity,
-            alignment: Alignment.center,
-            child: Text("اللغة",style: TextStyle(
+            child: Text(AppLocalizations.of(context)!.language,style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
             ),),
@@ -41,7 +45,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   color: Theme.of(context).colorScheme.primary,
                 )
               ),
-              child: Text("العربية",style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              child: Text(provider.language == "ar"?"العربية":"English",
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 color: Theme.of(context).primaryColor,
               )),
             ),
@@ -49,8 +54,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
           SizedBox(height: 15,),
           Container(
             width: double.infinity,
-            alignment: Alignment.center,
-            child: Text("المظهر",style: TextStyle(
+            child: Text(AppLocalizations.of(context)!.theme,style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
             ),),
@@ -71,7 +75,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                     color: Theme.of(context).colorScheme.primary,
                   )
               ),
-              child: Text("داكن",style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              child: Text(provider.theme == ThemeMode.dark?AppLocalizations.of(context)!.dark:AppLocalizations.of(context)!.light,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 color: Theme.of(context).primaryColor,
               )),
             ),

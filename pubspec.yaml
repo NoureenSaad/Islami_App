@@ -38,6 +38,15 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  provider: ^6.1.1
+  shared_preferences: ^2.2.2
+  flutter_launcher_icons: ^0.13.1
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo2.png"
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +64,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -80,6 +90,12 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+
+  fonts:
+    - family: Amiri
+      fonts:
+        - asset: assets/fonts/Amiri-Bold.ttf
+
   # fonts:
   #   - family: Schyler
   #     fonts:

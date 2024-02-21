@@ -1,5 +1,6 @@
 import 'package:eslami/ui/home/quran_title_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranWidget extends StatelessWidget {
   List<String> suraNames = [
@@ -29,8 +30,8 @@ class QuranWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text("اسم السورة",style: Theme.of(context).textTheme.titleLarge),
-            Text("عدد الآيات",style: Theme.of(context).textTheme.titleLarge),
+            Text(AppLocalizations.of(context)!.chaptername,style: Theme.of(context).textTheme.titleLarge),
+            Text(AppLocalizations.of(context)!.chapternumber,style: Theme.of(context).textTheme.titleLarge),
           ],
         ),
         Divider(
