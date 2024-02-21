@@ -1,26 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 // observable, subject, publisher
 class SettingsProvider extends ChangeNotifier{
-  late ThemeMode theme;
+  ThemeMode theme = ThemeMode.light;
   String language = "ar";
 
-  SettingsProvider({required bool isDarkTheme}){
-    theme = isDarkTheme? ThemeMode.dark: ThemeMode.light;
-  }
-
-  void changeTheme(ThemeMode newTheme) async{
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+  void changeTheme(ThemeMode newTheme){
     if(theme == newTheme) return;
-    if(theme == ThemeMode.dark){
-      theme = newTheme;
-      prefs.setBool("isDarkTheme",true);
-    }
-    else{
-      theme = newTheme;
-      prefs.setBool("isDarkTheme",false);
-    }
+    theme = newTheme;
     notifyListeners();
   }
 
