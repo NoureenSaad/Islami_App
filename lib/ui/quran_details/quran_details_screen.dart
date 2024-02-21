@@ -45,8 +45,8 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
                   textDirection: TextDirection.rtl,
                   style: Theme.of(context).textTheme.bodyMedium),
                   separatorBuilder: (context,index)=>Container(
-                    height: 2,
-                    color: Theme.of(context).dividerColor,
+                    height: 6,
+                    color: Colors.transparent,
                   ),
                   itemCount: lines.length),
             ),
