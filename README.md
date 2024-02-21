@@ -1,4 +1,4 @@
-# eslami
+# Islamy
 
 A new Flutter project.
 
