@@ -9,9 +9,9 @@
  "dark":"Dark",
  "light":"Light",
  "language":"Language",
- "chaptername":"Chapter Title",
- "chapternumber":"Chapter Number",
+ "chaptername":"Surah Name",
+ "chapternumber":"Verses Number",
  "hadethname":"Ahadeth",
  "tasbehnumber":"Tasbeh Number",
- "quranradio":"Quran Radio"
+ "quranradio":"Quran Broadcast"
 }

@@ -22,9 +22,9 @@ class _LanguageSheetState extends State<LanguageSheet> {
           getSelectedItem(provider.language == "ar"?"العربية":"English"),
           const SizedBox(height: 15,),
           InkWell(
-            onTap: (){
+            onTap: () async {
               Navigator.pop(context);
-              provider.changeLanguage(provider.language == "ar"?"en":"ar");
+              await provider.changeLanguage(provider.language == "ar"?"en":"ar");
             },
             child: getUnselectedItem(provider.language == "ar"?"English":"العربية")
           ),

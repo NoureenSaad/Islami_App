@@ -9,9 +9,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-void main(){
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  var provider = SettingsProvider();
+  await provider.loadSettings();
   runApp(ChangeNotifierProvider(
-    create: (context)=>SettingsProvider(),
+    create: (context)=> provider,
     child: MyApp()
   ));
 }
