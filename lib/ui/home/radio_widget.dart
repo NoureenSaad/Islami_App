@@ -1,5 +1,7 @@
+import 'package:eslami/cubit/radio/radio_cubit.dart';
+import 'package:eslami/ui/home/radio_widget_body.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RadioWidget extends StatefulWidget {
 
@@ -12,33 +14,18 @@ class _RadioWidgetState extends State<RadioWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset("assets/images/radio_image.png"),
-          SizedBox(height: 30,),
-          Text(AppLocalizations.of(context)!.quranradio,style: Theme.of(context).textTheme.labelMedium,),
-          SizedBox(height: 40,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Icon(Icons.fast_forward,size: 40,color: Theme.of(context).dividerColor,),
-              FilledButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.transparent)
-                ),
-                onPressed: (){
-                  setState(() {
-                    clicked = !clicked;
-                  });
-                },
-                child: Icon( clicked == false ? Icons.pause : Icons.play_arrow,size: 45,color: Theme.of(context).dividerColor,)
-              ),
-              Icon(Icons.fast_forward,size: 40,color: Theme.of(context).dividerColor,),
-            ],
-          )
-        ],
+    return BlocProvider(
+      create: (context)=>RadioCubit()..getRadio(),
+      child: BlocBuilder<RadioCubit,RadioState>(
+          builder: (context,state){
+            if(state is RadioSuccess){
+              return RadioWidgetBody(radios: state.radios);
+            }
+            else if(state is RadioError){
+              return Text(state.error);
+            }
+            return const Center(child: CircularProgressIndicator(),);
+          }
       ),
     );
   }

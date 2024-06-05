@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 
 class AppTheme{
   static bool isDark = false;
-
   static Color lightPrimary = Color(0xffb7935f);
   static Color lightSecondary = Color(0xffb7935f).withOpacity(0.57);
-
   static Color darkPrimary = Color(0xff141A2E);
   static Color darkSecondary = Color(0xffFACC1D);
 
