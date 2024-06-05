@@ -41,6 +41,9 @@ dependencies:
   provider: ^6.1.1
   shared_preferences: ^2.2.2
   flutter_launcher_icons: ^0.13.1
+  dio: ^5.4.3+1
+  flutter_bloc: ^8.1.5
+  audioplayers: ^6.0.0
 
 
 flutter_icons:
@@ -79,6 +82,7 @@ flutter:
   assets:
     - assets/images/
     - assets/files/
+    - assets/screenshots/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
